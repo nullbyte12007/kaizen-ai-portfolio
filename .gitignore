@@ -1,0 +1,27 @@
+# Jangan pernah commit kredensial / data runtime
+credentials*.json
+*.pem
+*.key
+.env
+.env.*
+auth.json
+twitter_cookies.json
+rclone.conf
+pass
+
+# Runtime
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+node_modules/
+.cache/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
