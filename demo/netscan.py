@@ -8,7 +8,7 @@ Target non-privat (IP publik) wajib pakai --authorized.
 Contoh:
   ./netscan.py 192.168.0.0/24
   ./netscan.py 192.168.0.0/24 --ports common
-  ./netscan.py 10.11.12.4 10.11.12.7 --ports 22,80,443,5432 --banner
+  ./netscan.py 10.0.0.4 10.0.0.7 --ports 22,80,443,5432 --banner
   ./netscan.py 100.64.0.0/24 --fast            # discovery doang
   ./netscan.py 192.168.0.0/24 --ports 1-1024 --json out.json
   ./netscan.py --hosts-file targets.txt --csv hasil.csv

@@ -11,7 +11,8 @@
 #
 set -euo pipefail
 
-OLD_HOME="/home/parkee"          # home asli yang masih ke-hardcode di config
+OLD_HOME="${OLD_HOME:-}"        # WAJIB: home lama yang masih ke-hardcode di config
+                                # contoh: OLD_HOME=/home/user ./migrate.sh install bundle.tar.gz
 GATEWAY_UNIT="openclaw-gateway.service"
 GATEWAY_EXEC_RE="openclaw/dist/index.js gateway"
 
@@ -79,6 +80,7 @@ cmd_install() {
   log "extract bundle ke $home ..."
   tar xzf "$bundle" -C "$home" || die "extract gagal"
 
+  [ -n "$OLD_HOME" ] || die "set OLD_HOME dulu (home lama), mis: OLD_HOME=/home/user $0 $*"
   if [ "$home" != "$OLD_HOME" ]; then
     log "menyesuaikan path $OLD_HOME -> $home"
     local f

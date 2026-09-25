@@ -5,7 +5,7 @@
 #   ~/.openclaw/workspace/credentials-github.json
 #   {
 #     "username": "akun-github",
-#     "token": "ghp_xxx / github_pat_xxx",
+#     "token": "PERSONAL_ACCESS_TOKEN",
 #     "repo": "kaizen-ai-portfolio",
 #     "visibility": "private",          # atau "public"
 #     "email": "opsional@email"         # buat identitas commit
@@ -37,12 +37,19 @@ cd "$REPO_DIR"
 git config user.name  "M Yusuf Saleh"
 git config user.email "$EMAIL"
 
-echo "→ memastikan repo '$REPO' ada di GitHub..."
-code=$(curl -s -o /tmp/gh_repo.json -w '%{http_code}' \
-  -X POST https://api.github.com/user/repos \
-  -H "Authorization: Bearer $TOKEN" \
-  -H "Accept: application/vnd.github+json" \
-  -d "{\"name\":\"$REPO\",\"private\":$([ "$VIS" = "private" ] && echo true || echo false)}")
+echo "→ memeriksa repo '$REPO'..."
+exists=$(curl -s -o /dev/null -w '%{http_code}' \
+  "https://api.github.com/repos/$USER/$REPO" -H "Authorization: Bearer $TOKEN")
+if [ "$exists" = "200" ]; then
+  echo "  ✔ repo sudah ada, langsung push"
+  code=422
+else
+  code=$(curl -s -o /tmp/gh_repo.json -w '%{http_code}' \
+    -X POST https://api.github.com/user/repos \
+    -H "Authorization: Bearer $TOKEN" \
+    -H "Accept: application/vnd.github+json" \
+    -d "{\"name\":\"$REPO\",\"private\":$([ "$VIS" = "private" ] && echo true || echo false)}")
+fi
 
 case "$code" in
   201) echo "  ✔ repo dibuat ($VIS)";;
