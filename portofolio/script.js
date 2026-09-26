@@ -75,7 +75,7 @@
   }
 
   /* Form kontak: demo validasi client-side.
-     Ganti isi handler ini dengan fetch() ke backend / layanan form lu. */
+     Ganti isi handler ini dengan fetch() ke backend / layanan formulir Anda. */
   if (form) {
     form.addEventListener("submit", function (event) {
       event.preventDefault();
