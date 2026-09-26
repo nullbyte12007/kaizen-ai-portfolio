@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Yusuf — Portofolio</title>
+  <meta name="description" content="Portofolio pribadi — proyek, skill, dan kontak." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#hero" class="brand">
+        <span class="brand-mark">MY</span>
+        <span class="brand-name">Muhammad Yusuf</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Navigasi utama">
+        <a href="#about">Tentang</a>
+        <a href="#skills">Skill</a>
+        <a href="#projects">Proyek</a>
+        <a href="#contact">Kontak</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Ganti tema" title="Ganti tema">
+          <span class="theme-icon theme-icon-sun">☀</span>
+          <span class="theme-icon theme-icon-moon">☾</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Halo, gua</p>
+          <h1>Muhammad Yusuf Chairul Saleh</h1>
+          <p class="role">IT Administrator &amp; Infrastructure Operations</p>
+          <p class="lead">
+            Gua jaga infrastruktur IT tetap jalan: server, jaringan, perangkat akses,
+            sampai CCTV. Fokus di monitoring, penanganan gangguan, dan otomasi
+            pekerjaan berulang supaya operasional nggak bergantung pada kerja manual.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">Lihat Proyek</a>
+            <a class="btn btn-ghost" href="#contact">Hubungi Gua</a>
+          </div>
+          <ul class="socials" aria-label="Media sosial">
+            <li><a href="https://github.com/nullbyte12007" aria-label="GitHub" rel="noopener" target="_blank">GitHub</a></li>
+            <li><a href="https://nullbyte12007.github.io/kaizen-ai-portfolio/" aria-label="Proyek AI Agent" rel="noopener" target="_blank">Proyek AI Agent</a></li>
+            <li><a href="mailto:workyusuf0301@gmail.com" aria-label="Email">Email</a></li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="avatar">
+            <img src="assets/avatar.svg" alt="" width="320" height="320" loading="eager" />
+          </div>
+          <div class="glow"></div>
+        </div>
+      </div>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>Linux</span><span>·</span><span>Monitoring Server</span><span>·</span><span>Nmap</span><span>·</span>
+          <span>Wireshark</span><span>·</span><span>PostgreSQL</span><span>·</span>
+          <span>Python</span><span>·</span><span>Bash</span><span>·</span><span>CCTV &amp; RFID</span><span>·</span>
+          <span>Backup &amp; Recovery</span><span>·</span><span>Otomasi</span><span>·</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">01 — Tentang</p>
+          <h2>Sedikit cerita</h2>
+        </header>
+        <div class="about-grid">
+          <div class="reveal">
+            <p>
+              Gua IT Administrator dengan pengalaman menangani infrastruktur multi-site:
+              server, jaringan, perangkat akses (reader &amp; RFID), CCTV, sampai perangkat
+              pengguna. Terbiasa menangani gangguan layanan dari mendeteksi sampai pulih.
+            </p>
+            <p>
+              Sehari-hari kerja di Linux, baca log, dan bikin skrip kecil yang menghemat
+              waktu tim — mulai dari backup otomatis sampai rekap data. Suka nulis
+              dokumentasi supaya penanganan insiden konsisten.
+            </p>
+          </div>
+          <dl class="stats reveal">
+            <div class="stat">
+              <dt>Pengalaman</dt>
+              <dd>3+ tahun</dd>
+            </div>
+            <div class="stat">
+              <dt>Proyek selesai</dt>
+              <dd>100+ pengguna</dd>
+            </div>
+            <div class="stat">
+              <dt>Klien</dt>
+              <dd>15+ PC</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section section-alt" id="skills">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">02 — Skill</p>
+          <h2>Yang gua pakai</h2>
+        </header>
+        <div class="skills-grid">
+          <article class="card reveal">
+            <h3>Server &amp; Infrastruktur</h3>
+            <ul class="tags">
+              <li>Linux</li><li>systemd</li><li>Monitoring</li><li>Analisis Log</li><li>Backup &amp; Recovery</li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <h3>Jaringan &amp; Keamanan</h3>
+            <ul class="tags">
+              <li>TCP/IP</li><li>Nmap</li><li>Wireshark</li><li>Burp Suite</li><li>OWASP Top 10</li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <h3>Otomasi &amp; Tooling</h3>
+            <ul class="tags">
+              <li>Python</li><li>Bash</li><li>REST API</li><li>PostgreSQL</li><li>Git</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">03 — Proyek</p>
+          <h2>Karya pilihan</h2>
+        </header>
+        <div class="projects-grid">
+          <article class="project card reveal">
+            <div class="project-thumb" aria-hidden="true">01</div>
+            <div class="project-body">
+              <h3>Kaizen — AI Agent</h3>
+              <p>Asisten AI yang jalan 24/7 di mesin sendiri: analisis log, monitoring server, backup terenkripsi otomatis, dan otomasi pelaporan. Dioperasikan lewat chat.</p>
+              <ul class="tags">
+                <li>Python</li><li>Linux</li><li>systemd</li><li>REST API</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://nullbyte12007.github.io/kaizen-ai-portfolio/" target="_blank" rel="noopener">Demo</a>
+                <a href="https://github.com/nullbyte12007/kaizen-ai-portfolio" target="_blank" rel="noopener">Source</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project card reveal">
+            <div class="project-thumb" aria-hidden="true">02</div>
+            <div class="project-body">
+              <h3>Hardening Aplikasi Web Internal</h3>
+              <p>Audit &amp; perbaikan keamanan aplikasi toko internal (Flask + SQLite): proteksi CSRF, captcha, throttle login, alur reset password berbasis token, dan hardening header/CSP.</p>
+              <ul class="tags">
+                <li>Python</li><li>Flask</li><li>OWASP</li><li>SQLite</li>
+              </ul>
+              <div class="project-links">
+                <span class="muted">Internal</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project card reveal">
+            <div class="project-thumb" aria-hidden="true">03</div>
+            <div class="project-body">
+              <h3>Toolkit Operasional</h3>
+              <p>Kumpulan tool buatan sendiri: port &amp; host scanner, pengunduh media untuk situs SPA, orkestrator backup terenkripsi, dan helper migrasi server.</p>
+              <ul class="tags">
+                <li>Python</li><li>Bash</li><li>gpg</li><li>rclone</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/nullbyte12007/kaizen-ai-portfolio/tree/main/demo" target="_blank" rel="noopener">Source</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section section-alt" id="contact">
+      <div class="container contact-grid">
+        <div class="reveal">
+          <p class="eyebrow">04 — Kontak</p>
+          <h2>Ada proyek? Ngobrol aja.</h2>
+          <p class="lead">
+            Gua terbuka buat kerja sama, freelance, atau sekadar tanya-tanya soal
+            arsitektur dan tooling.
+          </p>
+          <ul class="contact-list">
+            <li><span>Email</span> <a href="mailto:workyusuf0301@gmail.com">workyusuf0301@gmail.com</a></li>
+            <li><span>GitHub</span> <a href="https://github.com/nullbyte12007" target="_blank" rel="noopener">github.com/nullbyte12007</a></li>
+            <li><span>Lokasi</span> <span>Cipayung, Kota Depok</span></li>
+          </ul>
+        </div>
+
+        <form class="contact-form card reveal" id="contactForm" novalidate>
+          <label>
+            Nama
+            <input type="text" name="name" required placeholder="Nama kamu" />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required placeholder="nama@email.com" />
+          </label>
+          <label>
+            Pesan
+            <textarea name="message" rows="4" required placeholder="Ceritain proyeknya..."></textarea>
+          </label>
+          <button class="btn btn-primary" type="submit">Kirim Pesan</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Muhammad Yusuf Chairul Saleh.</p>
+      <a href="#hero">Balik ke atas ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
