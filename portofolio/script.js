@@ -80,14 +80,14 @@
     form.addEventListener("submit", function (event) {
       event.preventDefault();
       if (!form.checkValidity()) {
-        formStatus.textContent = "Lengkapi dulu semua field ya.";
+        formStatus.textContent = "Mohon lengkapi seluruh kolom.";
         formStatus.classList.add("is-error");
         return;
       }
 
       var data = Object.fromEntries(new FormData(form).entries());
       formStatus.classList.remove("is-error");
-      formStatus.textContent = "Makasih " + data.name + "! Pesan lu udah kesimpen (demo).";
+      formStatus.textContent = "Terima kasih, " + data.name + ". Pesan Anda telah tersimpan (demo).";
 
       /* Contoh kirim ke backend:
       fetch("/api/contact", {
