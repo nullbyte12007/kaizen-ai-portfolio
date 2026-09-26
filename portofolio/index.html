@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="id" data-theme="dark">
+<html lang="id" data-lang="id" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Muhammad Yusuf — Portofolio</title>
+  <title data-i18n="meta.title">Muhammad Yusuf — Portofolio</title>
   <meta name="description" content="Portofolio pribadi — proyek, skill, dan kontak." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <a class="skip-link" href="#main">Lewati ke konten</a>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Lewati ke konten</a>
 
   <header class="nav" id="nav">
     <div class="container nav-inner">
@@ -22,11 +22,17 @@
       </button>
 
       <nav class="nav-menu" id="navMenu" aria-label="Navigasi utama">
-        <a href="#about">Tentang</a>
-        <a href="#skills">Skill</a>
-        <a href="#projects">Proyek</a>
-        <a href="#certifications">Sertifikasi</a>
-        <a href="#contact">Kontak</a>
+        <a href="#about" data-i18n="nav.about">Tentang</a>
+        <a href="#skills" data-i18n="nav.skills">Skill</a>
+        <a href="#projects" data-i18n="nav.projects">Proyek</a>
+        <a href="#certifications" data-i18n="nav.certs">Sertifikasi</a>
+        <a href="#contact" data-i18n="nav.contact">Kontak</a>
+
+        <div class="lang-switch" role="group" aria-label="Pilih bahasa / Select language">
+          <button type="button" data-set-lang="id" class="is-active">ID</button>
+          <button type="button" data-set-lang="en">EN</button>
+        </div>
+
         <button class="theme-toggle" id="themeToggle" aria-label="Ganti tema" title="Ganti tema">
           <span class="theme-icon theme-icon-sun">☀</span>
           <span class="theme-icon theme-icon-moon">☾</span>
@@ -40,21 +46,21 @@
     <section class="hero" id="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Halo, saya</p>
+          <p class="eyebrow" data-i18n="hero.eyebrow">Halo, saya</p>
           <h1>Muhammad Yusuf Chairul Saleh</h1>
-          <p class="role">IT Administrator &amp; Infrastructure Operations</p>
-          <p class="lead">
+          <p class="role" data-i18n="hero.role">IT Administrator &amp; Infrastructure Operations</p>
+          <p class="lead" data-i18n="hero.lead">
             Mengelola dan menjaga keandalan infrastruktur IT multi-site — server, jaringan,
             perangkat akses, hingga CCTV. Fokus pada monitoring, penanganan gangguan, dan
             otomasi pekerjaan berulang agar operasional tidak bergantung pada proses manual.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#projects">Lihat Proyek</a>
-            <a class="btn btn-ghost" href="#contact">Hubungi Saya</a>
+            <a class="btn btn-primary" href="#projects" data-i18n="hero.cta.projects">Lihat Proyek</a>
+            <a class="btn btn-ghost" href="#contact" data-i18n="hero.cta.contact">Hubungi Saya</a>
           </div>
           <ul class="socials" aria-label="Media sosial">
             <li><a href="https://github.com/nullbyte12007" aria-label="GitHub" rel="noopener" target="_blank">GitHub</a></li>
-            <li><a href="https://nullbyte12007.github.io/kaizen-ai-portfolio/" aria-label="Proyek AI Agent" rel="noopener" target="_blank">Proyek AI Agent</a></li>
+            <li><a href="https://nullbyte12007.github.io/kaizen-ai-portfolio/" aria-label="AI Agent Project" rel="noopener" target="_blank" data-i18n="hero.link.ai">Proyek AI Agent</a></li>
             <li><a href="mailto:workyusuf0301@gmail.com" aria-label="Email">Email</a></li>
           </ul>
         </div>
@@ -68,10 +74,10 @@
       </div>
       <div class="marquee" aria-hidden="true">
         <div class="marquee-track">
-          <span>Linux</span><span>·</span><span>Monitoring Server</span><span>·</span><span>Nmap</span><span>·</span>
+          <span>Linux</span><span>·</span><span data-i18n="tag.serverMonitoring">Monitoring Server</span><span>·</span><span>Nmap</span><span>·</span>
           <span>Wireshark</span><span>·</span><span>PostgreSQL</span><span>·</span>
           <span>Python</span><span>·</span><span>Bash</span><span>·</span><span>CCTV &amp; RFID</span><span>·</span>
-          <span>Backup &amp; Recovery</span><span>·</span><span>Otomasi</span><span>·</span>
+          <span>Backup &amp; Recovery</span><span>·</span><span data-i18n="tag.automation">Otomasi</span><span>·</span>
         </div>
       </div>
     </section>
@@ -80,17 +86,17 @@
     <section class="section" id="about">
       <div class="container">
         <header class="section-head reveal">
-          <p class="eyebrow">01 — Tentang</p>
-          <h2>Sedikit cerita</h2>
+          <p class="eyebrow" data-i18n="about.eyebrow">01 — Tentang</p>
+          <h2 data-i18n="about.h2">Sedikit cerita</h2>
         </header>
         <div class="about-grid">
           <div class="reveal">
-            <p>
+            <p data-i18n="about.p1">
               Saya IT Administrator dengan pengalaman menangani infrastruktur multi-site:
               server, jaringan, perangkat akses (reader &amp; RFID), CCTV, hingga perangkat
               pengguna. Terbiasa menangani gangguan layanan sejak pendeteksian sampai pulih.
             </p>
-            <p>
+            <p data-i18n="about.p2">
               Keseharian bekerja di lingkungan Linux: menganalisis log dan menyusun skrip
               untuk menghemat waktu tim, mulai dari backup otomatis hingga rekapitulasi data.
               Terbiasa menyusun dokumentasi agar penanganan insiden tetap konsisten.
@@ -98,16 +104,16 @@
           </div>
           <dl class="stats reveal">
             <div class="stat">
-              <dt>Pengalaman</dt>
-              <dd>3+ tahun</dd>
+              <dt data-i18n="stats.experience">Pengalaman</dt>
+              <dd data-i18n="stats.experienceValue">3+ tahun</dd>
             </div>
             <div class="stat">
-              <dt>Proyek selesai</dt>
-              <dd>100+ pengguna</dd>
+              <dt data-i18n="stats.users">Pengguna didukung</dt>
+              <dd>100+</dd>
             </div>
             <div class="stat">
-              <dt>Klien</dt>
-              <dd>15+ PC</dd>
+              <dt data-i18n="stats.pc">PC dirakit</dt>
+              <dd>15+</dd>
             </div>
           </dl>
         </div>
@@ -118,24 +124,25 @@
     <section class="section section-alt" id="skills">
       <div class="container">
         <header class="section-head reveal">
-          <p class="eyebrow">02 — Skill</p>
-          <h2>Keahlian</h2>
+          <p class="eyebrow" data-i18n="skills.eyebrow">02 — Skill</p>
+          <h2 data-i18n="skills.h2">Keahlian</h2>
         </header>
         <div class="skills-grid">
           <article class="card reveal">
-            <h3>Server &amp; Infrastruktur</h3>
+            <h3 data-i18n="skills.c1">Server &amp; Infrastruktur</h3>
             <ul class="tags">
-              <li>Linux</li><li>systemd</li><li>Monitoring</li><li>Analisis Log</li><li>Backup &amp; Recovery</li>
+              <li>Linux</li><li>systemd</li><li>Monitoring</li>
+              <li data-i18n="tag.logAnalysis">Analisis Log</li><li>Backup &amp; Recovery</li>
             </ul>
           </article>
           <article class="card reveal">
-            <h3>Jaringan &amp; Keamanan</h3>
+            <h3 data-i18n="skills.c2">Jaringan &amp; Keamanan</h3>
             <ul class="tags">
               <li>TCP/IP</li><li>Nmap</li><li>Wireshark</li><li>Burp Suite</li><li>OWASP Top 10</li>
             </ul>
           </article>
           <article class="card reveal">
-            <h3>Otomasi &amp; Tooling</h3>
+            <h3 data-i18n="skills.c3">Otomasi &amp; Tooling</h3>
             <ul class="tags">
               <li>Python</li><li>Bash</li><li>REST API</li><li>PostgreSQL</li><li>Git</li>
             </ul>
@@ -148,21 +155,21 @@
     <section class="section" id="projects">
       <div class="container">
         <header class="section-head reveal">
-          <p class="eyebrow">03 — Proyek</p>
-          <h2>Karya pilihan</h2>
+          <p class="eyebrow" data-i18n="projects.eyebrow">03 — Proyek</p>
+          <h2 data-i18n="projects.h2">Karya pilihan</h2>
         </header>
         <div class="projects-grid">
           <article class="project card reveal">
             <div class="project-thumb" aria-hidden="true">01</div>
             <div class="project-body">
               <h3>Kaizen — AI Agent</h3>
-              <p>Asisten AI yang jalan 24/7 di mesin sendiri: analisis log, monitoring server, backup terenkripsi otomatis, dan otomasi pelaporan. Dioperasikan lewat chat.</p>
+              <p data-i18n="proj1.desc">Asisten AI yang jalan 24/7 di mesin sendiri: analisis log, monitoring server, backup terenkripsi otomatis, dan otomasi pelaporan. Dioperasikan lewat chat.</p>
               <ul class="tags">
                 <li>Python</li><li>Linux</li><li>systemd</li><li>REST API</li>
               </ul>
               <div class="project-links">
-                <a href="https://nullbyte12007.github.io/kaizen-ai-portfolio/" target="_blank" rel="noopener">Demo</a>
-                <a href="https://github.com/nullbyte12007/kaizen-ai-portfolio" target="_blank" rel="noopener">Source</a>
+                <a href="https://nullbyte12007.github.io/kaizen-ai-portfolio/" target="_blank" rel="noopener" data-i18n="link.demo">Demo</a>
+                <a href="https://github.com/nullbyte12007/kaizen-ai-portfolio" target="_blank" rel="noopener" data-i18n="link.source">Source</a>
               </div>
             </div>
           </article>
@@ -170,13 +177,13 @@
           <article class="project card reveal">
             <div class="project-thumb" aria-hidden="true">02</div>
             <div class="project-body">
-              <h3>Hardening Aplikasi Web Internal</h3>
-              <p>Audit &amp; perbaikan keamanan aplikasi toko internal (Flask + SQLite): proteksi CSRF, captcha, throttle login, alur reset password berbasis token, dan hardening header/CSP.</p>
+              <h3 data-i18n="proj2.title">Hardening Aplikasi Web Internal</h3>
+              <p data-i18n="proj2.desc">Audit &amp; perbaikan keamanan aplikasi toko internal (Flask + SQLite): proteksi CSRF, captcha, throttle login, alur reset password berbasis token, dan hardening header/CSP.</p>
               <ul class="tags">
                 <li>Python</li><li>Flask</li><li>OWASP</li><li>SQLite</li>
               </ul>
               <div class="project-links">
-                <a href="https://github.com/nullbyte12007/tokoku" target="_blank" rel="noopener">Source</a>
+                <a href="https://github.com/nullbyte12007/tokoku" target="_blank" rel="noopener" data-i18n="link.source">Source</a>
               </div>
             </div>
           </article>
@@ -184,13 +191,13 @@
           <article class="project card reveal">
             <div class="project-thumb" aria-hidden="true">03</div>
             <div class="project-body">
-              <h3>Toolkit Operasional</h3>
-              <p>Kumpulan tool buatan sendiri: port &amp; host scanner, pengunduh media untuk situs SPA, orkestrator backup terenkripsi, dan helper migrasi server.</p>
+              <h3 data-i18n="proj3.title">Toolkit Operasional</h3>
+              <p data-i18n="proj3.desc">Kumpulan tool buatan sendiri: port &amp; host scanner, pengunduh media untuk situs SPA, orkestrator backup terenkripsi, dan helper migrasi server.</p>
               <ul class="tags">
                 <li>Python</li><li>Bash</li><li>gpg</li><li>rclone</li>
               </ul>
               <div class="project-links">
-                <a href="https://github.com/nullbyte12007/kaizen-ai-portfolio/tree/main/demo" target="_blank" rel="noopener">Source</a>
+                <a href="https://github.com/nullbyte12007/kaizen-ai-portfolio/tree/main/demo" target="_blank" rel="noopener" data-i18n="link.source">Source</a>
               </div>
             </div>
           </article>
@@ -202,8 +209,8 @@
     <section class="section" id="certifications">
       <div class="container">
         <header class="section-head reveal">
-          <p class="eyebrow">04 — Sertifikasi</p>
-          <h2>Sertifikasi</h2>
+          <p class="eyebrow" data-i18n="certs.eyebrow">04 — Sertifikasi</p>
+          <h2 data-i18n="certs.h2">Sertifikasi</h2>
         </header>
         <div class="projects-grid">
           <article class="card reveal">
@@ -215,7 +222,7 @@
             <p class="muted">Course-net · 2022</p>
           </article>
           <article class="card reveal">
-            <h3>Pemrograman Dasar</h3>
+            <h3 data-i18n="cert3.title">Pemrograman Dasar</h3>
             <p class="muted">PT Bonet Utama · 2021</p>
           </article>
         </div>
@@ -226,33 +233,33 @@
     <section class="section section-alt" id="contact">
       <div class="container contact-grid">
         <div class="reveal">
-          <p class="eyebrow">05 — Kontak</p>
-          <h2>Mari Berdiskusi</h2>
-          <p class="lead">
+          <p class="eyebrow" data-i18n="contact.eyebrow">05 — Kontak</p>
+          <h2 data-i18n="contact.h2">Mari Berdiskusi</h2>
+          <p class="lead" data-i18n="contact.lead">
             Terbuka untuk peluang kerja sama, proyek freelance, maupun diskusi seputar
             infrastruktur, monitoring, dan otomasi.
           </p>
           <ul class="contact-list">
             <li><span>Email</span> <a href="mailto:workyusuf0301@gmail.com">workyusuf0301@gmail.com</a></li>
             <li><span>GitHub</span> <a href="https://github.com/nullbyte12007" target="_blank" rel="noopener">github.com/nullbyte12007</a></li>
-            <li><span>Lokasi</span> <span>Cipayung, Kota Depok</span></li>
+            <li><span data-i18n="contact.location">Lokasi</span> <span>Cipayung, Kota Depok</span></li>
           </ul>
         </div>
 
         <form class="contact-form card reveal" id="contactForm" novalidate>
           <label>
-            Nama
-            <input type="text" name="name" required placeholder="Nama Anda" />
+            <span data-i18n="form.name">Nama</span>
+            <input type="text" name="name" required placeholder="Nama Anda" data-i18n-ph="form.namePh" />
           </label>
           <label>
-            Email
+            <span>Email</span>
             <input type="email" name="email" required placeholder="nama@email.com" />
           </label>
           <label>
-            Pesan
-            <textarea name="message" rows="4" required placeholder="Ceritakan kebutuhan Anda..."></textarea>
+            <span data-i18n="form.message">Pesan</span>
+            <textarea name="message" rows="4" required placeholder="Ceritakan kebutuhan Anda..." data-i18n-ph="form.messagePh"></textarea>
           </label>
-          <button class="btn btn-primary" type="submit">Kirim Pesan</button>
+          <button class="btn btn-primary" type="submit" data-i18n="form.send">Kirim Pesan</button>
           <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
         </form>
       </div>
@@ -262,10 +269,11 @@
   <footer class="footer">
     <div class="container footer-inner">
       <p>© <span id="year">2026</span> Muhammad Yusuf Chairul Saleh.</p>
-      <a href="https://github.com/nullbyte12007?tab=repositories" target="_blank" rel="noopener">Semua repositori ↑</a>
+      <a href="https://github.com/nullbyte12007?tab=repositories" target="_blank" rel="noopener" data-i18n="footer.repos">Semua repositori ↑</a>
     </div>
   </footer>
 
+  <script src="i18n.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
