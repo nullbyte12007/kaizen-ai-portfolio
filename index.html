@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kaizen ⛩️ — Autonomous AI Assistant</title>
+<meta name="description" content="Kaizen — autonomous AI assistant untuk server operations, otomasi, dan analisis data.">
+<style>
+  :root{
+    --bg:#0a0d1f; --bg2:#18103a; --card:rgba(255,255,255,.05);
+    --line:rgba(255,255,255,.10); --accent:#00e5a8; --violet:#7c5cff;
+    --text:#eef1f8; --muted:#9aa3bd;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(900px 600px at 85% -10%, rgba(124,92,255,.35), transparent 60%),
+      radial-gradient(700px 500px at -10% 100%, rgba(0,229,168,.18), transparent 60%),
+      linear-gradient(160deg,var(--bg),var(--bg2));
+    background-attachment:fixed;
+  }
+  .wrap{max-width:1000px;margin:0 auto;padding:0 22px}
+  header{padding:64px 0 26px}
+  .badge{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--accent);
+    border:1px solid rgba(0,229,168,.35);background:rgba(0,229,168,.07);
+    padding:5px 12px;border-radius:999px;margin-bottom:18px}
+  h1{font-size:clamp(38px,7vw,64px);margin:0 0 10px;letter-spacing:-1px;line-height:1.05}
+  .tag{font-size:clamp(15px,2.4vw,19px);color:var(--muted);max-width:640px;margin:0 0 26px}
+  .links{display:flex;flex-wrap:wrap;gap:10px}
+  .btn{display:inline-block;padding:11px 20px;border-radius:11px;font-size:14.5px;font-weight:600;
+    text-decoration:none;color:var(--text);border:1px solid var(--line);background:var(--card);
+    transition:.18s}
+  .btn:hover{transform:translateY(-2px);border-color:rgba(0,229,168,.5)}
+  .btn.primary{background:linear-gradient(135deg,var(--accent),#00b98a);color:#06231b;border:0}
+  section{padding:44px 0}
+  h2{font-size:13px;letter-spacing:2.2px;text-transform:uppercase;color:var(--accent);
+    margin:0 0 20px;font-weight:700}
+  .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 20px 18px;
+    transition:.2s}
+  .card:hover{border-color:rgba(0,229,168,.4);transform:translateY(-3px)}
+  .card .ico{font-size:22px;margin-bottom:8px}
+  .card h3{margin:0 0 6px;font-size:16px}
+  .card p{margin:0;font-size:14px;color:var(--muted)}
+  .reel{display:flex;gap:26px;align-items:center;flex-wrap:wrap}
+  .reel video{width:230px;border-radius:16px;border:1px solid var(--line);
+    box-shadow:0 20px 50px rgba(0,0,0,.45)}
+  .reel .note{flex:1;min-width:240px;color:var(--muted);font-size:14.5px}
+  .note code{background:rgba(255,255,255,.07);padding:2px 7px;border-radius:6px;
+    font-size:13px;color:#cfe9e0}
+  pre{background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:12px;
+    padding:15px 16px;overflow:auto;font-size:12.8px;color:#cfe9e0}
+  footer{border-top:1px solid var(--line);margin-top:30px;padding:26px 0 44px;
+    color:var(--muted);font-size:13.5px;text-align:center}
+  a.plain{color:var(--accent);text-decoration:none}
+  a.plain:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="badge">⛩️ Autonomous AI Assistant</div>
+    <h1>Kaizen</h1>
+    <p class="tag">
+      Asisten AI yang jalan 24/7 di mesin sendiri. Dioperasikan lewat chat,
+      buat ngurusin server operations, otomasi kerjaan berulang, dan analisis data
+      lintas sistem.
+    </p>
+    <div class="links">
+      <a class="btn primary" href="https://github.com/nullbyte12007/kaizen-ai-portfolio">Lihat Repo</a>
+      <a class="btn" href="#video">Video Perkenalan</a>
+      <a class="btn" href="#kemampuan">Kemampuan</a>
+    </div>
+  </header>
+
+  <section id="video">
+    <h2>Perkenalan</h2>
+    <div class="reel">
+      <video src="assets/intro-9x16.mp4" controls muted playsinline poster="assets/card-1x1.png"></video>
+      <div class="note">
+        <p><strong>10 detik, 9:16.</strong> Aset ini bukan hasil editing manual —
+        frame-nya digenerate frame-by-frame pakai Python (Pillow), lalu di-encode ke video
+        dengan ffmpeg. Teksnya auto-fit, emoji dirender berwarna.</p>
+        <p>Artinya: konten bisa diulang dan diubah kapan aja dengan <em>satu parameter</em>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="kemampuan">
+    <h2>Kemampuan</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="ico">🔎</div>
+        <h3>Analisis Log</h3>
+        <p>Membedah log ratusan MB dari beberapa sistem sekaligus, mengorelasikan kejadian,
+           dan menemukan akar masalah — bukan cuma menunjuk baris error.</p>
+      </div>
+      <div class="card">
+        <div class="ico">🖥️</div>
+        <h3>Server Operations</h3>
+        <p>Memantau kesehatan layanan, kapasitas, dan konfigurasi; menindaklanjuti gangguan
+           dengan urutan pemulihan yang terukur.</p>
+      </div>
+      <div class="card">
+        <div class="ico">🔐</div>
+        <h3>Backup &amp; Recovery</h3>
+        <p>Snapshot database konsisten tanpa mematikan layanan, enkripsi AES-256,
+           sinkronisasi cloud, plus retensi otomatis dan uji pemulihan.</p>
+      </div>
+      <div class="card">
+        <div class="ico">⚙️</div>
+        <h3>Otomasi</h3>
+        <p>Mengubah pekerjaan manual jadi skrip dan penjadwalan (systemd/cron):
+           pelaporan, rekapitulasi, monitoring berkala, dan notifikasi.</p>
+      </div>
+      <div class="card">
+        <div class="ico">🔗</div>
+        <h3>Integrasi API</h3>
+        <p>Menyambungkan sistem yang biasanya kepisah — helpdesk, spreadsheet,
+           layanan REST — jadi satu alur data yang bisa dipakai.</p>
+      </div>
+      <div class="card">
+        <div class="ico">🛡️</div>
+        <h3>Uji Keamanan</h3>
+        <p>Pemindaian endpoint, review header keamanan, kontrol akses, sampai
+           uji kerentanan dasar (OWASP Top 10) pada aplikasi internal.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contoh Nyata</h2>
+<pre>$ ./netscan.py 127.0.0.0/30 --ports 22,6379,80 --banner
+127.0.0.1   up   22/ssh SSH-2.0-OpenSSH_10.2p1 Ubuntu, 6379/redis
+
+$ openclaw-backup
+lokal selesai: 8 backup tersimpan (retensi 14)
+offsite: terkirim ke KaizenAI:openclaw-backup (13M)
+offsite: retensi 30 hari diterapkan</pre>
+  </section>
+
+  <section>
+    <h2>Batasannya</h2>
+    <div class="grid">
+      <div class="card"><h3>Berjalan saat diminta</h3>
+        <p>Nggak punya inisiatif di antara pesan, kecuali lewat penjadwalan yang memang dipasang.</p></div>
+      <div class="card"><h3>Butuh kredensial</h3>
+        <p>Nggak bisa menembus batas akses. Yang privat harus dikasih aksesnya dulu.</p></div>
+      <div class="card"><h3>Patuh pada aturan pemilik</h3>
+        <p>Perintah berbahaya (sudo, SSH, hapus data) dibatasi berlapis — bukan cuma di prompt.</p></div>
+    </div>
+  </section>
+
+  <footer>
+    ⛩️ <strong>Kaizen</strong> — dibangun &amp; dioperasikan oleh
+    <strong>M Yusuf Chairul Saleh</strong><br>
+    <span style="font-size:12.5px">OpenClaw · Command Code CLI · Python · Linux · systemd</span>
+  </footer>
+</div>
+
+</body>
+</html>
