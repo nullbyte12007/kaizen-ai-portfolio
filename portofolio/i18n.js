@@ -99,7 +99,10 @@
     "form.send":       { id: "Kirim Pesan", en: "Send Message" },
     "form.fillAll":    { id: "Mohon lengkapi seluruh kolom.", en: "Please complete all fields." },
     "form.thanks":     { id: "Terima kasih, ", en: "Thank you, " },
-    "form.saved":      { id: ". Pesan Anda telah tersimpan (demo).", en: ". Your message has been saved (demo)." },
+    "form.saved":      { id: ". Pesan sudah terkirim — saya akan membalas secepatnya.", en: ". Your message has been sent — I'll get back to you soon." },
+    "form.demo":       { id: ". Form belum tersambung ke email (mode demo).", en: ". The form is not wired to email yet (demo mode)." },
+    "form.sending":    { id: "Mengirim pesan...", en: "Sending your message..." },
+    "form.error":      { id: "Maaf, pesan gagal terkirim. Coba lagi sebentar lagi.", en: "Sorry, the message could not be sent. Please try again shortly." },
 
     /* footer */
     "footer.repos": { id: "Semua repositori ↑", en: "All repositories ↑" }

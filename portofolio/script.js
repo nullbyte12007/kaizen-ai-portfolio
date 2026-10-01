@@ -74,30 +74,93 @@
     revealables.forEach(function (el) { el.classList.add("is-visible"); });
   }
 
-  /* Form kontak: demo validasi client-side.
-     Ganti isi handler ini dengan fetch() ke backend / layanan formulir Anda. */
+  /* ===== Form kontak: pengiriman sungguhan =====
+     Situs ini statis (GitHub Pages) sehingga tidak bisa punya backend sendiri,
+     jadi memakai layanan relay formulir:
+
+       - Web3Forms : isi `web3formsKey` (gratis, https://web3forms.com). Email
+                     tujuan TIDAK terlihat di kode.
+       - FormSubmit: cukup isi `email` (https://formsubmit.co). Tanpa API key,
+                     tetapi alamat email terlihat di kode dan butuh SATU kali
+                     klik konfirmasi dari inbox saat submission pertama.
+
+     Kalau `web3formsKey` diisi, dia yang dipakai. Kalau kosong tapi `email`
+     diisi, otomatis pakai FormSubmit. Kalau dua-duanya kosong -> mode demo. */
+  var CONTACT = {
+    web3formsKey: "",
+    email: "workyusuf0301@gmail.com",
+    subject: "Pesan baru dari portofolio"
+  };
+
+  function contactTarget(payload) {
+    if (CONTACT.web3formsKey) {
+      return {
+        url: "https://api.web3forms.com/submit",
+        body: Object.assign({
+          access_key: CONTACT.web3formsKey,
+          subject: CONTACT.subject,
+          from_name: "Portofolio"
+        }, payload)
+      };
+    }
+    if (CONTACT.email) {
+      return {
+        url: "https://formsubmit.co/ajax/" + encodeURIComponent(CONTACT.email),
+        body: Object.assign({
+          _subject: CONTACT.subject,
+          _template: "table",
+          _captcha: "false"
+        }, payload)
+      };
+    }
+    return null;
+  }
+
+  function setFormStatus(text, isError) {
+    formStatus.textContent = text;
+    formStatus.classList.toggle("is-error", !!isError);
+  }
+
   if (form) {
     form.addEventListener("submit", function (event) {
       event.preventDefault();
       if (!form.checkValidity()) {
-        formStatus.textContent = window.portoText("form.fillAll");
-        formStatus.classList.add("is-error");
+        setFormStatus(window.portoText("form.fillAll"), true);
         return;
       }
 
       var data = Object.fromEntries(new FormData(form).entries());
-      formStatus.classList.remove("is-error");
-      formStatus.textContent = window.portoText("form.thanks") + data.name + window.portoText("form.saved");
+      var target = contactTarget(data);
+      var button = form.querySelector('button[type="submit"]');
+      var original = button ? button.textContent : "";
 
-      /* Contoh kirim ke backend:
-      fetch("/api/contact", {
+      if (!target) {
+        setFormStatus(window.portoText("form.thanks") + data.name + window.portoText("form.demo"), true);
+        return;
+      }
+
+      setFormStatus(window.portoText("form.sending"), false);
+      if (button) { button.disabled = true; button.textContent = window.portoText("form.sending"); }
+
+      fetch(target.url, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-      });
-      */
-
-      form.reset();
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(target.body)
+      })
+        .then(function (res) {
+          if (!res.ok) { throw new Error("HTTP " + res.status); }
+          return res;
+        })
+        .then(function () {
+          setFormStatus(window.portoText("form.thanks") + data.name + window.portoText("form.saved"), false);
+          form.reset();
+        })
+        .catch(function () {
+          setFormStatus(window.portoText("form.error"), true);
+        })
+        .then(function () {
+          if (button) { button.disabled = false; button.textContent = original; }
+        });
     });
   }
 })();

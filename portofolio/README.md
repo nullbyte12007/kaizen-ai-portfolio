@@ -33,8 +33,30 @@ template-portofolio/
 
 - **Warna:** ubah `--accent` dan `--accent-2` di bagian `:root` pada `style.css`.
 - **Tema default:** ubah `data-theme="dark"` di `<html>` jadi `"light"`.
-- **Form kontak:** `script.js` cuma demo validasi. Sambungkan ke backend/layanan form
-  (mis. Formspree, Resend, API sendiri) — lihat komentar `fetch("/api/contact", ...)`.
+- **Form kontak:** lihat bagian "Form kontak (pengiriman sungguhan)" di bawah.
+
+## Form kontak (pengiriman sungguhan)
+
+Karena situs ini statis (GitHub Pages), tidak ada backend — jadi form dikirim lewat
+layanan relay. Konfigurasinya ada di `script.js`, objek `CONTACT`:
+
+```js
+var CONTACT = {
+  web3formsKey: "",                          // isi ini -> pakai Web3Forms (email tidak terlihat di kode)
+  email: "workyusuf0301@gmail.com",          // dipakai kalau web3formsKey kosong (FormSubmit)
+  subject: "Pesan baru dari portofolio"
+};
+```
+
+- **FormSubmit (default, aktif):** posting ke `https://formsubmit.co/ajax/<email>`.
+  Tanpa API key, tapi **sekali saja** perlu klik link "Activate Form" di inbox
+  setelah submission pertama. Alamat email terlihat di kode (harvestable).
+- **Web3Forms:** ambil access key gratis di https://web3forms.com, tempel di
+  `web3formsKey`. Lebih bersih — email tujuan tidak ikut ter-render di halaman.
+
+Status di UI jujur: "Mengirim..." saat proses, pesan sukses hanya muncul kalau
+request benar-benar berhasil, dan kalau gagal muncul pesan error (bukan lagi
+selalu "(demo)").
 
 ## Fitur
 
